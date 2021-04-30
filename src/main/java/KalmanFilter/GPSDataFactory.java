@@ -2,6 +2,7 @@ package KalmanFilter;
 
 import com.google.common.eventbus.EventBus;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GPSDataFactory {
@@ -25,12 +26,9 @@ public class GPSDataFactory {
     private void startFactory() {
         Thread thread = new Thread() {
             public void run() {
-                for (String string : gpsDataLines) {
-                    GPSSingleData gpsSingleData = proccessLine(string);
-                    bus.post(gpsSingleData);
-
-                    // Simulate GPS intervals
-                    // pauseThread(SLEEP_TIME);
+                ArrayList<GPSSingleData> gpsSingleData = proccessLine(gpsDataLines);
+                for (GPSSingleData el: gpsSingleData) {
+                    bus.post(el);
                 }
             }
         };
@@ -41,6 +39,16 @@ public class GPSDataFactory {
         String[] gpsParts = gpsLine.split(" ");
         return new GPSSingleData(Float.parseFloat(gpsParts[1]), Double.parseDouble(gpsParts[2]),
                 Double.parseDouble(gpsParts[3]), Long.parseLong(gpsParts[4]), Long.parseLong(gpsParts[5]));
+    }
+
+    private ArrayList<GPSSingleData> proccessLine(List<String> gpsLine) {
+        ArrayList<GPSSingleData> ar = new ArrayList<GPSSingleData>();
+        for(String str: gpsLine) {
+            String[] gpsParts = str.split(" ");
+            ar.add(new GPSSingleData(Float.parseFloat(gpsParts[1]), Double.parseDouble(gpsParts[2]),
+                    Double.parseDouble(gpsParts[3]), Long.parseLong(gpsParts[4]), Long.parseLong(gpsParts[5])));
+        }
+        return ar;
     }
 
     private void pauseThread(long sleepTime) {

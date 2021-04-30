@@ -65,7 +65,7 @@ public class KalmanFilter {
             // Kalman gain matrix 'k' = Covariance * Inverse(Covariance + MeasurementVariance)
             // because 'k' is dimensionless,
             // it doesn't matter that variance has different units to latitude and longitude
-            float k = variance / (variance + newAccuracy * newAccuracy - 10);
+            float k = variance / (variance + newAccuracy * newAccuracy - 2);
             // apply 'k'
             latitude += k * (newLatitude - latitude);
             longitude += k * (newLongitude - longitude);

@@ -3,6 +3,9 @@ package utils
 import KalmanFilter.GPSDataFactory
 import KalmanFilter.KalmanFilter
 import KalmanFilter.Main
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import com.google.gson.reflect.TypeToken
 import models.LocationEntity
 import models.TypeAlg
 import org.junit.jupiter.api.Assertions.assertTrue
@@ -21,10 +24,10 @@ internal class ValidatorTest {
 
     @Test
     fun validatePath_WithSimpleDots_CordsTwoDotsWillBeChange() {
-        val firstPoint = LocationEntity(1.0, 1.0, 0f, Date(Date().time - 4))
-        val secondPoint = LocationEntity(2.0, 2.0, 0f, Date(Date().time - 3))
-        val threePoint = LocationEntity(2.0, 3.0, 0f, Date(Date().time - 2))
-        val fourPoint = LocationEntity(4.0, 4.0, 0f, Date(Date().time - 1))
+        val firstPoint = LocationEntity(1.0, 1.0, 0f, 0.0, Date(Date().time - 4))
+        val secondPoint = LocationEntity(2.0, 2.0, 0f, 0.0, Date(Date().time - 3))
+        val threePoint = LocationEntity(2.0, 3.0, 0f, 0.0, Date(Date().time - 2))
+        val fourPoint = LocationEntity(4.0, 4.0, 0f, 0.0, Date(Date().time - 1))
         val result = validator.validatePath(arrayListOf(firstPoint, secondPoint, threePoint, fourPoint), TypeAlg.FIRST)
         val checkValue = result[1]
         assertTrue(
@@ -37,31 +40,12 @@ internal class ValidatorTest {
 
     @Test
     fun validatePath_WithDataLikeNativeDots() {
-        val bufferReader = File("A:\\javaPojects\\LocationAlgoritms\\tempData\\geo.txt").bufferedReader()
+        val bufferReader = File("A:\\javaPojects\\LocationAlgoritms\\tempData\\geoJson.json").bufferedReader()
         var count = - 1
         val date = Date()
-        val inputString = bufferReader.lines().map {
-            count++
-            val elements = it.split("; ")
-            LocationEntity(elements[0].toDouble(), elements[1].toDouble(), 5f, Date(date.time - count))
-        }.toList()
-        print("[")
-        val f: (a: Double) -> Double = { a -> (a * 10.0.pow(6)).roundToInt() / 10.0.pow(6) }
-        inputString.forEachIndexed { i, it ->
-            val x = f(it.latitude)
-            val y = f(it.longitude)
-            if (inputString.size - 1 == i)
-                println("[$x, $y]")
-            else
-                println("[$x, $y],")
-        }
-        println("]")
-        return
-        val result = validator.validatePath(ArrayList(inputString), TypeAlg.KALMANHARD)
-        result.forEach {
-            val x = f(it.latitude)
-            val y = f(it.longitude)
-            println("$x; $y")
+        val inputString = stringOfDotsToArray(bufferReader.readText())
+        inputString.forEach { el ->
+            val result = validator.validatePath(ArrayList(el), TypeAlg.KALMANHARD)
         }
     }
 
@@ -70,40 +54,73 @@ internal class ValidatorTest {
         val bufferReader = File("A:\\javaPojects\\LocationAlgoritms\\tempData\\geo.txt").bufferedReader()
         var count = - 1
         val date = Date()
-        val inputString = bufferReader.lines().map {
-            count+= 1000
-            val elements = it.split("; ")
-            LocationEntity(elements[0].toDouble(), elements[1].toDouble(), 1f, Date(date.time + count))
-        }.toList()
+        val inputString = readFromFile()
         count=0
         File("A:\\javaPojects\\LocationAlgoritms\\tempData\\geo2.txt").bufferedWriter().use {
             out ->
             inputString.forEach {
-                count++
-                val x = it.latitude
-                val y = it.longitude
-                val time = it.date.time
-                val speed = 1
-                val accuracy = Random.nextLong(1, 2)
-                out.write("$count $speed $x $y $time $accuracy\n")
+                if (it.size in 21..49) {
+                    it.forEach {
+                        count++
+                        val x = it.latitude
+                        val y = it.longitude
+                        val time = it.date.time
+                        val speed = 1
+                        val accuracy = Random.nextLong(1, 2)
+                        out.write("$count $speed $x $y $time $accuracy\n")
+                    }
+                }
             }
         }
     }
 
     @Test
-    fun readFromFile() {
-        val bufferReader = File("A:\\javaPojects\\LocationAlgoritms\\tempData\\new_geo.txt").bufferedReader()
-        var count = - 1
-        val date = Date()
-        val inputString = bufferReader.lines().map {
-            count++
-            val elements = it.split(" ")
-            LocationEntity(elements[1].toDouble(), elements[2].toDouble(), 5f, Date(date.time - count))
-        }.toList()
-        inputString.forEach {
-            val x = (it.latitude)
-            val y = (it.longitude)
-            println("$x; $y")
-        }
+    fun readFromFile(): ArrayList<ArrayList<LocationEntity>> {
+        val bufferReader = File("A:\\javaPojects\\LocationAlgoritms\\tempData\\geoJson.json").bufferedReader()
+        val text = bufferReader.readText()
+        return stringOfDotsToArray(text)
+    }
+
+    fun stringOfDotsToArray(str: String): ArrayList<ArrayList<LocationEntity>> {
+        val arrayOfDots = arrayListOf<ArrayList<LocationEntity>>(arrayListOf())
+        GsonBuilder().create().fromJson<ArrayList<Map<String, String>>>(str,
+            object: TypeToken<ArrayList<Map<String, String>>>() {}.type)
+            .map {
+                val idS = it["id"] ?: ""
+                val id = idS.toDouble()
+                if (it.containsKey("dots")) {
+                    val dot =
+                        Gson().fromJson<Map<String, Double>>(it["dots"], object : TypeToken<Map<String, Double>>() {}.type)
+                    val speed = dot["speed"] ?: 0.0
+                    val longitude = dot["longitude"] ?: 0.0
+                    val latitude = dot["latitude"] ?: 0.0
+                    val timestamp = dot["timestamp"] ?: 0.0
+                    val date = Date(timestamp.toLong())
+                    LocationEntity(
+                        latitude,
+                        longitude,
+                        5.0F,
+                        speed,
+                        date
+                    )
+                } else {
+                    LocationEntity()
+                }
+            }
+            .forEach {
+                val constDate = 20000
+                val lastIndex = arrayOfDots.lastIndex
+                val lastAr = arrayOfDots[lastIndex]
+                if (lastAr.size != 0) {
+                    if (lastAr.last().date.time - it.date.time < constDate)
+                        arrayOfDots[lastIndex].add(it)
+                    else {
+                        arrayOfDots.add(arrayListOf())
+                        arrayOfDots[arrayOfDots.lastIndex].add(it)
+                    }
+                } else
+                    arrayOfDots[lastIndex].add(it)
+            }
+        return arrayOfDots
     }
 }

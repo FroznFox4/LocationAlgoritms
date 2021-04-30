@@ -10,6 +10,7 @@ data class LocationEntity(
     var latitude: Double = 0.0,
     var longitude: Double = 0.0,
     var accuracy: Float = 0.0f,
+    var speed: Double = 0.0,
     var date: Date = Date()
 ) {
     fun distanceTo(secondEl: LocationEntity): Float =

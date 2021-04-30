@@ -1,22 +1,18 @@
-KalmanFilter/Importer.java
- KalmanFilter.Importer
- KalmanFilter.Importer$1
+KalmanFilter/KalmanFilter.java
+ KalmanFilter.KalmanFilter
 KalmanFilter/GPSDataFactory.java
  KalmanFilter.GPSDataFactory
  KalmanFilter.GPSDataFactory$1
 KalmanFilter/Exporter.java
  KalmanFilter.Exporter
-KalmanStart.java
- KalmanStart
 KalmanFilter/Constants.java
  KalmanFilter.Constants
-KalmanLatLong.java
- KalmanLatLong
 KalmanFilter/BusProvider.java
  KalmanFilter.BusProvider
 KalmanFilter/GPSSingleData.java
  KalmanFilter.GPSSingleData
-KalmanFilter/KalmanFilter.java
- KalmanFilter.KalmanFilter
 KalmanFilter/Main.java
  KalmanFilter.Main
+KalmanFilter/Importer.java
+ KalmanFilter.Importer
+ KalmanFilter.Importer$1
