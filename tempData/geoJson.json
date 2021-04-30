@@ -1,0 +1,927 @@
+[
+  {
+    "id": 1,
+    "users": "Mew",
+    "dots": "{\"longitude\":123213.0,\"latitude\":1.2312321E7}"
+  },
+  {
+    "id": 2,
+    "users": "Mew",
+    "dots": "{\"longitude\":123213.0,\"latitude\":1.2312321E7}"
+  },
+  {
+    "id": 3,
+    "users": "Mew",
+    "dots": "{\"longitude\":123213.0,\"latitude\":1.2312321E7,\"speed\":123.0,\"timestamp\":123}"
+  },
+  {
+    "id": 4,
+    "users": "Mew",
+    "dots": "{\"longitude\":123213.0,\"latitude\":1.2312321E7,\"speed\":123.0,\"timestamp\":123}"
+  },
+  {
+    "id": 5,
+    "users": "Mew",
+    "dots": "{\"longitude\":123213.0,\"latitude\":1.2312321E7,\"speed\":123.0,\"timestamp\":123}"
+  },
+  {
+    "id": 6,
+    "users": "Mew",
+    "dots": "{\"longitude\":123213.0,\"latitude\":1.2312321E7,\"speed\":123.0,\"timestamp\":123}"
+  },
+  {
+    "id": 7,
+    "users": "Mew",
+    "dots": "{\"longitude\":123213.0,\"latitude\":1.2312321E7,\"speed\":123.0,\"timestamp\":123}"
+  },
+  {
+    "id": 8,
+    "users": "mew",
+    "dots": "{\"longitude\":-104.990303,\"latitude\":39.739201,\"speed\":3.0,\"timestamp\":435033}"
+  },
+  {
+    "id": 9,
+    "users": "app.gresgo.heode.main.MainActivity@75e7d23",
+    "dots": "{\"longitude\":-104.990303,\"latitude\":39.739201,\"speed\":3.0,\"timestamp\":454645}"
+  },
+  {
+    "id": 10,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5669381,\"latitude\":56.8279471,\"speed\":0.41,\"timestamp\":905460156}"
+  },
+  {
+    "id": 13,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5645071,\"latitude\":56.8277453,\"speed\":1.028487,\"timestamp\":905627852}"
+  },
+  {
+    "id": 12,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5631654,\"latitude\":56.8275047,\"speed\":3.0,\"timestamp\":905618063}"
+  },
+  {
+    "id": 11,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5670887,\"latitude\":56.8283526,\"speed\":3.0,\"timestamp\":905575697}"
+  },
+  {
+    "id": 14,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5671141,\"latitude\":56.8282303,\"speed\":0.32049835,\"timestamp\":905637926}"
+  },
+  {
+    "id": 15,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5667829,\"latitude\":56.8274552,\"speed\":3.0,\"timestamp\":905649978}"
+  },
+  {
+    "id": 16,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5697317,\"latitude\":56.8290414,\"speed\":3.0,\"timestamp\":905681439}"
+  },
+  {
+    "id": 17,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5675808,\"latitude\":56.8258307,\"speed\":3.0,\"timestamp\":905688705}"
+  },
+  {
+    "id": 18,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5674667,\"latitude\":56.8260268,\"speed\":0.20822129,\"timestamp\":905699970}"
+  },
+  {
+    "id": 19,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.567164,\"latitude\":56.8265827,\"speed\":0.009579731,\"timestamp\":905710867}"
+  },
+  {
+    "id": 20,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5675976,\"latitude\":56.8257843,\"speed\":3.0,\"timestamp\":905721865}"
+  },
+  {
+    "id": 21,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5675584,\"latitude\":56.8261345,\"speed\":3.0,\"timestamp\":905732021}"
+  },
+  {
+    "id": 22,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.567672,\"latitude\":56.8253327,\"speed\":3.0,\"timestamp\":905775746}"
+  },
+  {
+    "id": 23,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5670174,\"latitude\":56.825237,\"speed\":0.37417474,\"timestamp\":905785797}"
+  },
+  {
+    "id": 24,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5667168,\"latitude\":56.825198,\"speed\":1.2114323,\"timestamp\":905793713}"
+  },
+  {
+    "id": 25,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5671337,\"latitude\":56.8248565,\"speed\":1.1711197,\"timestamp\":905806746}"
+  },
+  {
+    "id": 26,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5669459,\"latitude\":56.8248258,\"speed\":1.2499833,\"timestamp\":905812989}"
+  },
+  {
+    "id": 27,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5670739,\"latitude\":56.8246778,\"speed\":1.1135381,\"timestamp\":905824088}"
+  },
+  {
+    "id": 28,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5670192,\"latitude\":56.8245221,\"speed\":1.5632558,\"timestamp\":905839832}"
+  },
+  {
+    "id": 29,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5670446,\"latitude\":56.8243135,\"speed\":0.19917212,\"timestamp\":905849841}"
+  },
+  {
+    "id": 30,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5682001,\"latitude\":56.8242621,\"speed\":1.3373961,\"timestamp\":905870865}"
+  },
+  {
+    "id": 31,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5685292,\"latitude\":56.8240812,\"speed\":0.45156366,\"timestamp\":905901939}"
+  },
+  {
+    "id": 32,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5682691,\"latitude\":56.8241204,\"speed\":0.9382985,\"timestamp\":905911960}"
+  },
+  {
+    "id": 33,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5688799,\"latitude\":56.823821,\"speed\":3.0,\"timestamp\":905922974}"
+  },
+  {
+    "id": 34,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5692421,\"latitude\":56.8239589,\"speed\":0.10934853,\"timestamp\":905944543}"
+  },
+  {
+    "id": 35,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5689528,\"latitude\":56.8241217,\"speed\":1.4776034,\"timestamp\":905950747}"
+  },
+  {
+    "id": 36,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5698037,\"latitude\":56.8235784,\"speed\":3.0,\"timestamp\":905964601}"
+  },
+  {
+    "id": 37,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5700954,\"latitude\":56.8234408,\"speed\":0.7499856,\"timestamp\":905975640}"
+  },
+  {
+    "id": 38,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5706064,\"latitude\":56.8232037,\"speed\":3.488645,\"timestamp\":905983594}"
+  },
+  {
+    "id": 39,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5702139,\"latitude\":56.8232203,\"speed\":0.21485575,\"timestamp\":905995718}"
+  },
+  {
+    "id": 40,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5692545,\"latitude\":56.821812,\"speed\":0.030348295,\"timestamp\":906006701}"
+  },
+  {
+    "id": 41,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5696456,\"latitude\":56.8225278,\"speed\":0.8724134,\"timestamp\":906017973}"
+  },
+  {
+    "id": 42,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5703331,\"latitude\":56.8229097,\"speed\":2.3718615,\"timestamp\":906028776}"
+  },
+  {
+    "id": 43,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5700988,\"latitude\":56.8225872,\"speed\":0.028605474,\"timestamp\":906039842}"
+  },
+  {
+    "id": 44,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.570485,\"latitude\":56.8232533,\"speed\":3.0,\"timestamp\":906050806}"
+  },
+  {
+    "id": 45,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5705672,\"latitude\":56.8227895,\"speed\":0.051380478,\"timestamp\":906061825}"
+  },
+  {
+    "id": 46,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5702198,\"latitude\":56.8218815,\"speed\":3.0,\"timestamp\":906072950}"
+  },
+  {
+    "id": 47,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.570988,\"latitude\":56.8224252,\"speed\":0.5171973,\"timestamp\":906084542}"
+  },
+  {
+    "id": 48,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5713713,\"latitude\":56.8226995,\"speed\":3.58484,\"timestamp\":906091351}"
+  },
+  {
+    "id": 49,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5715388,\"latitude\":56.8226859,\"speed\":0.071396984,\"timestamp\":906121172}"
+  },
+  {
+    "id": 50,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5718412,\"latitude\":56.8225084,\"speed\":0.19292429,\"timestamp\":906135711}"
+  },
+  {
+    "id": 51,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5720261,\"latitude\":56.8222377,\"speed\":1.2957953,\"timestamp\":906145746}"
+  },
+  {
+    "id": 52,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5719317,\"latitude\":56.8220448,\"speed\":2.755922,\"timestamp\":906153096}"
+  },
+  {
+    "id": 53,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5729391,\"latitude\":56.8222749,\"speed\":1.3021747,\"timestamp\":906176749}"
+  },
+  {
+    "id": 54,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5737628,\"latitude\":56.821874,\"speed\":6.452018,\"timestamp\":906183166}"
+  },
+  {
+    "id": 55,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5730453,\"latitude\":56.822078,\"speed\":0.012022126,\"timestamp\":906197804}"
+  },
+  {
+    "id": 58,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5731993,\"latitude\":56.821467,\"speed\":1.5341604,\"timestamp\":906226086}"
+  },
+  {
+    "id": 60,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5742171,\"latitude\":56.8216886,\"speed\":0.07919583,\"timestamp\":906252840}"
+  },
+  {
+    "id": 61,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5744588,\"latitude\":56.82165,\"speed\":1.289303,\"timestamp\":906260786}"
+  },
+  {
+    "id": 62,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5750181,\"latitude\":56.8213851,\"speed\":4.6918035,\"timestamp\":906266861}"
+  },
+  {
+    "id": 63,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5742336,\"latitude\":56.8209181,\"speed\":3.4236758,\"timestamp\":906277511}"
+  },
+  {
+    "id": 64,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5747046,\"latitude\":56.8208758,\"speed\":0.46533674,\"timestamp\":906291607}"
+  },
+  {
+    "id": 56,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5730478,\"latitude\":56.8216628,\"speed\":3.4102898,\"timestamp\":906208849}"
+  },
+  {
+    "id": 65,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5747859,\"latitude\":56.8207591,\"speed\":0.47551933,\"timestamp\":906312718}"
+  },
+  {
+    "id": 57,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.573011,\"latitude\":56.8213147,\"speed\":4.5815425,\"timestamp\":906215351}"
+  },
+  {
+    "id": 59,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5733671,\"latitude\":56.8214171,\"speed\":0.39723057,\"timestamp\":906241728}"
+  },
+  {
+    "id": 66,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5750119,\"latitude\":56.8206694,\"speed\":1.6335763,\"timestamp\":906322688}"
+  },
+  {
+    "id": 67,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5764321,\"latitude\":56.8209106,\"speed\":1.3510424,\"timestamp\":906333669}"
+  },
+  {
+    "id": 68,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5765955,\"latitude\":56.8208763,\"speed\":2.5424564,\"timestamp\":906343712}"
+  },
+  {
+    "id": 69,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5757558,\"latitude\":56.82017,\"speed\":0.8193178,\"timestamp\":906353785}"
+  },
+  {
+    "id": 70,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5764821,\"latitude\":56.8202776,\"speed\":0.0016255473,\"timestamp\":906364807}"
+  },
+  {
+    "id": 71,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5767866,\"latitude\":56.8213295,\"speed\":2.1876247,\"timestamp\":906374862}"
+  },
+  {
+    "id": 72,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5765019,\"latitude\":56.8213352,\"speed\":3.0,\"timestamp\":906385847}"
+  },
+  {
+    "id": 73,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5768906,\"latitude\":56.8213143,\"speed\":3.0,\"timestamp\":906397560}"
+  },
+  {
+    "id": 74,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5767234,\"latitude\":56.8213265,\"speed\":3.0,\"timestamp\":906407643}"
+  },
+  {
+    "id": 75,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5761363,\"latitude\":56.8209443,\"speed\":3.0,\"timestamp\":906417735}"
+  },
+  {
+    "id": 76,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5756635,\"latitude\":56.8212132,\"speed\":3.0,\"timestamp\":906428765}"
+  },
+  {
+    "id": 77,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5767444,\"latitude\":56.8214076,\"speed\":3.0,\"timestamp\":906451869}"
+  },
+  {
+    "id": 78,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5758506,\"latitude\":56.820335,\"speed\":0.15,\"timestamp\":906495806}"
+  },
+  {
+    "id": 79,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5768739,\"latitude\":56.8205004,\"speed\":3.0,\"timestamp\":906612744}"
+  },
+  {
+    "id": 80,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5756432,\"latitude\":56.820615,\"speed\":3.0,\"timestamp\":906619047}"
+  },
+  {
+    "id": 81,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5767483,\"latitude\":56.8201741,\"speed\":3.0,\"timestamp\":906629166}"
+  },
+  {
+    "id": 82,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5762034,\"latitude\":56.8204555,\"speed\":0.024678696,\"timestamp\":906640907}"
+  },
+  {
+    "id": 83,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5761934,\"latitude\":56.8213472,\"speed\":3.0,\"timestamp\":906650944}"
+  },
+  {
+    "id": 84,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5770037,\"latitude\":56.82147,\"speed\":3.0,\"timestamp\":906662302}"
+  },
+  {
+    "id": 85,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5769642,\"latitude\":56.8213803,\"speed\":3.0,\"timestamp\":906672335}"
+  },
+  {
+    "id": 86,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5769904,\"latitude\":56.8214917,\"speed\":3.0,\"timestamp\":906683841}"
+  },
+  {
+    "id": 87,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5755294,\"latitude\":56.8213474,\"speed\":3.0,\"timestamp\":906694970}"
+  },
+  {
+    "id": 88,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5765072,\"latitude\":56.8213063,\"speed\":3.0,\"timestamp\":906714922}"
+  },
+  {
+    "id": 89,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5755745,\"latitude\":56.8212968,\"speed\":3.0,\"timestamp\":906725976}"
+  },
+  {
+    "id": 90,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5761476,\"latitude\":56.8213188,\"speed\":3.0,\"timestamp\":906745993}"
+  },
+  {
+    "id": 91,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5763471,\"latitude\":56.820887,\"speed\":6.055315E-4,\"timestamp\":906758856}"
+  },
+  {
+    "id": 92,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5755802,\"latitude\":56.8212873,\"speed\":3.0,\"timestamp\":906768891}"
+  },
+  {
+    "id": 93,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.57616,\"latitude\":56.8205174,\"speed\":3.0,\"timestamp\":906778968}"
+  },
+  {
+    "id": 94,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5774147,\"latitude\":56.8200585,\"speed\":0.003320969,\"timestamp\":906791835}"
+  },
+  {
+    "id": 95,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5772294,\"latitude\":56.8202603,\"speed\":4.6394753,\"timestamp\":906801853}"
+  },
+  {
+    "id": 96,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5759334,\"latitude\":56.8213468,\"speed\":3.0,\"timestamp\":906813860}"
+  },
+  {
+    "id": 97,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5749092,\"latitude\":56.8208806,\"speed\":3.0,\"timestamp\":906824904}"
+  },
+  {
+    "id": 98,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5756048,\"latitude\":56.8205817,\"speed\":0.04234003,\"timestamp\":906835838}"
+  },
+  {
+    "id": 99,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5809802,\"latitude\":56.8257642,\"speed\":3.0,\"timestamp\":906846530}"
+  },
+  {
+    "id": 100,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5764026,\"latitude\":56.8202518,\"speed\":3.0,\"timestamp\":906856781}"
+  },
+  {
+    "id": 101,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5773202,\"latitude\":56.8199476,\"speed\":3.0,\"timestamp\":906867517}"
+  },
+  {
+    "id": 102,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5777331,\"latitude\":56.8196625,\"speed\":3.0,\"timestamp\":906877721}"
+  },
+  {
+    "id": 103,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.578875,\"latitude\":56.8192374,\"speed\":3.0,\"timestamp\":906890737}"
+  },
+  {
+    "id": 104,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5800015,\"latitude\":56.8189062,\"speed\":3.0,\"timestamp\":906900767}"
+  },
+  {
+    "id": 105,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5808545,\"latitude\":56.8184948,\"speed\":3.0,\"timestamp\":906905877}"
+  },
+  {
+    "id": 106,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5818417,\"latitude\":56.818219,\"speed\":3.0,\"timestamp\":906913544}"
+  },
+  {
+    "id": 107,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5825861,\"latitude\":56.8179307,\"speed\":3.0,\"timestamp\":906924566}"
+  },
+  {
+    "id": 108,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5831041,\"latitude\":56.8178168,\"speed\":0.014407219,\"timestamp\":906934552}"
+  },
+  {
+    "id": 109,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5835502,\"latitude\":56.8176487,\"speed\":3.0,\"timestamp\":906967299}"
+  },
+  {
+    "id": 110,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5847059,\"latitude\":56.8173499,\"speed\":3.0,\"timestamp\":906975559}"
+  },
+  {
+    "id": 111,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5852537,\"latitude\":56.8170453,\"speed\":0.013679139,\"timestamp\":906985595}"
+  },
+  {
+    "id": 112,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5847899,\"latitude\":56.8170505,\"speed\":3.0,\"timestamp\":906996721}"
+  },
+  {
+    "id": 113,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5866494,\"latitude\":56.8165258,\"speed\":3.0,\"timestamp\":907006750}"
+  },
+  {
+    "id": 114,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5864914,\"latitude\":56.8162304,\"speed\":3.0,\"timestamp\":907016739}"
+  },
+  {
+    "id": 115,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5876041,\"latitude\":56.8156748,\"speed\":3.0,\"timestamp\":907027862}"
+  },
+  {
+    "id": 116,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5885907,\"latitude\":56.8157312,\"speed\":3.0,\"timestamp\":907047951}"
+  },
+  {
+    "id": 117,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5884521,\"latitude\":56.8156793,\"speed\":3.0,\"timestamp\":907058018}"
+  },
+  {
+    "id": 118,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5878998,\"latitude\":56.8156955,\"speed\":3.0,\"timestamp\":907067892}"
+  },
+  {
+    "id": 121,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5908205,\"latitude\":56.8160258,\"speed\":3.0,\"timestamp\":907107971}"
+  },
+  {
+    "id": 123,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5933607,\"latitude\":56.8164472,\"speed\":3.0,\"timestamp\":907128940}"
+  },
+  {
+    "id": 124,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.593234,\"latitude\":56.8162229,\"speed\":3.0,\"timestamp\":907140074}"
+  },
+  {
+    "id": 125,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5932087,\"latitude\":56.8161323,\"speed\":3.0,\"timestamp\":907151248}"
+  },
+  {
+    "id": 126,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5950381,\"latitude\":56.8162762,\"speed\":3.0,\"timestamp\":907165624}"
+  },
+  {
+    "id": 127,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5957073,\"latitude\":56.8163758,\"speed\":3.0,\"timestamp\":907175648}"
+  },
+  {
+    "id": 130,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5991894,\"latitude\":56.816747,\"speed\":3.0,\"timestamp\":907237372}"
+  },
+  {
+    "id": 132,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.600078,\"latitude\":56.8165946,\"speed\":3.0,\"timestamp\":907258394}"
+  },
+  {
+    "id": 133,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6010573,\"latitude\":56.8167308,\"speed\":3.0,\"timestamp\":907268645}"
+  },
+  {
+    "id": 134,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6019042,\"latitude\":56.8168328,\"speed\":3.0,\"timestamp\":907278568}"
+  },
+  {
+    "id": 119,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5887158,\"latitude\":56.8156812,\"speed\":3.0,\"timestamp\":907087992}"
+  },
+  {
+    "id": 128,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5971911,\"latitude\":56.8165129,\"speed\":3.0,\"timestamp\":907217352}"
+  },
+  {
+    "id": 120,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5883632,\"latitude\":56.8148578,\"speed\":3.0,\"timestamp\":907098008}"
+  },
+  {
+    "id": 129,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5987966,\"latitude\":56.815995,\"speed\":3.0,\"timestamp\":907227347}"
+  },
+  {
+    "id": 122,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5919142,\"latitude\":56.8159917,\"speed\":3.0,\"timestamp\":907117864}"
+  },
+  {
+    "id": 131,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.5998192,\"latitude\":56.8164455,\"speed\":3.0,\"timestamp\":907248393}"
+  },
+  {
+    "id": 135,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6017239,\"latitude\":56.8167423,\"speed\":3.0,\"timestamp\":907289519}"
+  },
+  {
+    "id": 136,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.603638,\"latitude\":56.8170706,\"speed\":3.0,\"timestamp\":907300465}"
+  },
+  {
+    "id": 137,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6052868,\"latitude\":56.817233,\"speed\":3.0,\"timestamp\":907310587}"
+  },
+  {
+    "id": 138,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6061423,\"latitude\":56.8174379,\"speed\":3.0,\"timestamp\":907320551}"
+  },
+  {
+    "id": 139,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6061117,\"latitude\":56.8171364,\"speed\":3.0,\"timestamp\":907330552}"
+  },
+  {
+    "id": 140,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.606343,\"latitude\":56.8174915,\"speed\":3.0,\"timestamp\":907360589}"
+  },
+  {
+    "id": 141,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.607442,\"latitude\":56.816996,\"speed\":1.273917,\"timestamp\":907535885}"
+  },
+  {
+    "id": 142,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6071845,\"latitude\":56.8170364,\"speed\":3.0,\"timestamp\":908171639}"
+  },
+  {
+    "id": 143,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6070956,\"latitude\":56.8171532,\"speed\":3.0,\"timestamp\":908181606}"
+  },
+  {
+    "id": 144,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6071999,\"latitude\":56.8172968,\"speed\":1.1096227,\"timestamp\":908197910}"
+  },
+  {
+    "id": 145,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6069078,\"latitude\":56.8174555,\"speed\":0.099184655,\"timestamp\":908207783}"
+  },
+  {
+    "id": 146,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6071027,\"latitude\":56.8176039,\"speed\":0.7127582,\"timestamp\":908222495}"
+  },
+  {
+    "id": 147,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6072118,\"latitude\":56.8177117,\"speed\":0.5756784,\"timestamp\":908232497}"
+  },
+  {
+    "id": 148,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6074622,\"latitude\":56.8177549,\"speed\":0.7443927,\"timestamp\":908242500}"
+  },
+  {
+    "id": 149,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6076088,\"latitude\":56.8176663,\"speed\":0.87998617,\"timestamp\":908252518}"
+  },
+  {
+    "id": 150,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.607976,\"latitude\":56.8179803,\"speed\":0.8011104,\"timestamp\":908263978}"
+  },
+  {
+    "id": 151,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6080009,\"latitude\":56.817813,\"speed\":1.9017968,\"timestamp\":908270866}"
+  },
+  {
+    "id": 152,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6082131,\"latitude\":56.8177818,\"speed\":0.030191582,\"timestamp\":908286889}"
+  },
+  {
+    "id": 153,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6088479,\"latitude\":56.8179034,\"speed\":2.366784,\"timestamp\":908296823}"
+  },
+  {
+    "id": 154,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6093229,\"latitude\":56.8180216,\"speed\":1.7710505,\"timestamp\":908306559}"
+  },
+  {
+    "id": 155,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6095159,\"latitude\":56.8182536,\"speed\":0.13053754,\"timestamp\":908318067}"
+  },
+  {
+    "id": 156,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6094889,\"latitude\":56.8183441,\"speed\":3.0,\"timestamp\":908350184}"
+  },
+  {
+    "id": 157,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6096167,\"latitude\":56.8182698,\"speed\":0.4011881,\"timestamp\":908378429}"
+  },
+  {
+    "id": 158,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6100449,\"latitude\":56.8182934,\"speed\":2.441624,\"timestamp\":908389488}"
+  },
+  {
+    "id": 159,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6102265,\"latitude\":56.8184784,\"speed\":2.735472,\"timestamp\":908400807}"
+  },
+  {
+    "id": 160,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.610538,\"latitude\":56.8184821,\"speed\":1.7046759,\"timestamp\":908411746}"
+  },
+  {
+    "id": 161,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6107464,\"latitude\":56.8184678,\"speed\":0.10899064,\"timestamp\":908427370}"
+  },
+  {
+    "id": 162,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6111862,\"latitude\":56.8184931,\"speed\":3.4483335,\"timestamp\":908438370}"
+  },
+  {
+    "id": 163,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.611754,\"latitude\":56.8186428,\"speed\":0.13405843,\"timestamp\":908449411}"
+  },
+  {
+    "id": 164,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6122111,\"latitude\":56.8186017,\"speed\":3.0,\"timestamp\":908471459}"
+  },
+  {
+    "id": 165,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6124674,\"latitude\":56.8186902,\"speed\":1.8469517,\"timestamp\":908488666}"
+  },
+  {
+    "id": 166,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6126666,\"latitude\":56.818783,\"speed\":1.8343368,\"timestamp\":908499813}"
+  },
+  {
+    "id": 167,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6132471,\"latitude\":56.8188912,\"speed\":0.21049301,\"timestamp\":908515531}"
+  },
+  {
+    "id": 168,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6135079,\"latitude\":56.8189818,\"speed\":0.3035462,\"timestamp\":908537858}"
+  },
+  {
+    "id": 169,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6184324,\"latitude\":56.8195959,\"speed\":3.0,\"timestamp\":908548672}"
+  },
+  {
+    "id": 170,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6179644,\"latitude\":56.8193948,\"speed\":3.399238,\"timestamp\":908559661}"
+  },
+  {
+    "id": 171,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6159713,\"latitude\":56.8185273,\"speed\":0.11286443,\"timestamp\":908569703}"
+  },
+  {
+    "id": 172,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6162628,\"latitude\":56.8184863,\"speed\":0.68671703,\"timestamp\":908579910}"
+  },
+  {
+    "id": 173,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6165198,\"latitude\":56.8186367,\"speed\":2.5948749,\"timestamp\":908589868}"
+  },
+  {
+    "id": 174,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6164877,\"latitude\":56.8184541,\"speed\":3.0,\"timestamp\":908600814}"
+  },
+  {
+    "id": 175,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6161193,\"latitude\":56.8188851,\"speed\":1.3004907E-4,\"timestamp\":908621890}"
+  },
+  {
+    "id": 176,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6168332,\"latitude\":56.8189221,\"speed\":3.5266852,\"timestamp\":908637889}"
+  },
+  {
+    "id": 177,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6170648,\"latitude\":56.8190002,\"speed\":1.2875024,\"timestamp\":908654007}"
+  },
+  {
+    "id": 178,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6175828,\"latitude\":56.8190751,\"speed\":3.4948807,\"timestamp\":908660232}"
+  },
+  {
+    "id": 179,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6176634,\"latitude\":56.8194037,\"speed\":0.08821339,\"timestamp\":908698082}"
+  },
+  {
+    "id": 180,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6178106,\"latitude\":56.8198355,\"speed\":3.0,\"timestamp\":908719106}"
+  },
+  {
+    "id": 181,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6182672,\"latitude\":56.8197141,\"speed\":0.0019421671,\"timestamp\":908752096}"
+  },
+  {
+    "id": 182,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6183577,\"latitude\":56.8198195,\"speed\":0.044573244,\"timestamp\":908761964}"
+  },
+  {
+    "id": 183,
+    "users": "app.gresgo.heode.main.MainActivity@37a06cc",
+    "dots": "{\"longitude\":60.6185242,\"latitude\":56.8197837,\"speed\":0.6792902,\"timestamp\":908784908}"
+  },
+  {
+    "id": 188,
+    "users": "mew",
+    "dots": "{\"longitude\":-74.005898,\"latitude\":40.7127,\"speed\":3.0,\"timestamp\":1617944}"
+  },
+  {
+    "id": 189,
+    "users": "text\n",
+    "dots": "{\"longitude\":-74.005898,\"latitude\":40.7127,\"speed\":3.0,\"timestamp\":1617944}"
+  }
+]
