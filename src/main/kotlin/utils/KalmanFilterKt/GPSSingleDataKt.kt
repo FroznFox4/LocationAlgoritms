@@ -1,4 +1,4 @@
-package utils.KalmanFilterKtTest
+package utils.KalmanFilterKt
 
 data class GPSSingleDataKt (
     var speed: Float = 0f,

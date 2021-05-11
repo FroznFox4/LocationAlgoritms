@@ -1,6 +1,5 @@
-package utils.KalmanFilterKtTest
+package utils.KalmanFilterKt
 
-import KalmanFilter.Exporter
 import models.LocationEntity
 import java.util.*
 import kotlin.collections.ArrayList
@@ -12,7 +11,6 @@ class KalmanFilterKt {
     private var latitude: Double = 0.0
     private var longitude: Double = 0.0
     private var variance: Float = -1F
-    private val exporter: Exporter = Exporter()
     private val collection: ArrayList<LocationEntity> = arrayListOf()
 
     fun getCollection(): ArrayList<LocationEntity> {
@@ -89,8 +87,8 @@ class KalmanFilterKt {
     }
 
     private fun exportNewPoint(speed: Float, longitude: Double, latitude: Double, timestamp: Long) {
-        val newGPSdata = GPSSingleDataKt(speed, longitude, latitude, timestamp)
-        this.collection.add(newGPSdata.toLocation())
+        val newGPData = GPSSingleDataKt(speed, longitude, latitude, timestamp)
+        this.collection.add(newGPData.toLocation())
     }
 
     private fun exportNewPoint(locationEntity: LocationEntity) {
@@ -105,6 +103,7 @@ class KalmanFilterKt {
         var locationEntity: LocationEntity
         with(gpsSingleDataKt) {
             locationEntity = LocationEntity(
+                "",
                 latitude,
                 longitude,
                 accuracy.toFloat(),

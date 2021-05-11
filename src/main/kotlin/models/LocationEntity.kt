@@ -6,7 +6,8 @@ import kotlin.math.pow
 import kotlin.math.sqrt
 
 @Data
-data class LocationEntity(
+open class LocationEntity(
+    var userName: String = "",
     var latitude: Double = 0.0,
     var longitude: Double = 0.0,
     var accuracy: Float = 0.0f,

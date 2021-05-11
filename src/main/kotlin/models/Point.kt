@@ -1,6 +1,6 @@
 package models
 
 data class Point(
-    val X: Double,
-    val Y: Double
+    var X: Double,
+    var Y: Double
 )

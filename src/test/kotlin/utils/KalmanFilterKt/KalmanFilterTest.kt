@@ -1,4 +1,4 @@
-package utils.KalmanFilterKtTest
+package utils.KalmanFilterKt
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -6,7 +6,6 @@ import com.google.gson.reflect.TypeToken
 import models.LocationEntity
 import org.junit.jupiter.api.Test
 
-import org.junit.jupiter.api.Assertions.*
 import java.io.File
 import java.util.*
 import java.util.concurrent.ThreadLocalRandom
@@ -51,6 +50,7 @@ internal class KalmanFilterTest {
                     val date = Date(timestamp.toLong())
 
                     LocationEntity(
+                        "",
                         latitude,
                         longitude,
                         ThreadLocalRandom.current().nextDouble(0.0, 10.0).toFloat(),
