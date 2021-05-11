@@ -33,10 +33,8 @@ class PeoplesAroundServiceImpl : PeoplesAroundService {
         }
 
     private val matrixWithoutZeros = listConverter.matrixWithoutZeros
-    private val matrixWithZeros = listConverter.matrixWithoutZeros
+    private val matrixWithZeros = listConverter.matrixWithZeros
     private val matrixMap = mapConverter.matrixMap
-
-    constructor()
 
     /**
      *  @param strategy {
@@ -56,7 +54,7 @@ class PeoplesAroundServiceImpl : PeoplesAroundService {
     }
 
     override fun getPeoplesInRadius(dots: List<LocationEntity>, radius: Double): List<IntersectionsPeoples> {
-        val matrix = listConverter.convertListOfDotsToMatrixDots(dots)
+//        val matrix = listConverter.convertListOfDotsToMatrixDots(dots)
         return getPeoplesInRadiusForUsers(radius, userMatrix.keys.toList())
     }
 
