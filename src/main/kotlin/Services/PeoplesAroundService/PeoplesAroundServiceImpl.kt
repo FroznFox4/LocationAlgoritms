@@ -57,10 +57,10 @@ class PeoplesAroundServiceImpl : PeoplesAroundService {
 
     override fun getPeoplesInRadius(dots: List<LocationEntity>, radius: Double): List<IntersectionsPeoples> {
         val matrix = listConverter.convertListOfDotsToMatrixDots(dots)
-        return getPeoplesInRadiusForUser(radius, userMatrix.keys.toList())
+        return getPeoplesInRadiusForUsers(radius, userMatrix.keys.toList())
     }
 
-    override fun getPeoplesInRadiusForUser(
+    override fun getPeoplesInRadiusForUsers(
         radius: Double,
         user: List<String>
     ): List<IntersectionsPeoples> {
