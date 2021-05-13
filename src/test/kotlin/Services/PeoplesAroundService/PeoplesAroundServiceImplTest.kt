@@ -1,14 +1,15 @@
 package Services.PeoplesAroundService
 
 import Services.PeoplesAroundService.Utils.MapConverter
+import models.LocationEntity
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import utils.ReaderAndWriter
 
 internal class PeoplesAroundServiceImplTest {
-    val str = "tempData/geoJson.json"
-    val readerAndWriter = ReaderAndWriter(str)
-    val peoplesAroundServiceImpl: PeoplesAroundService = PeoplesAroundServiceImpl()
+    private val str = "tempData/geoJson.json"
+    private val readerAndWriter = ReaderAndWriter(str)
+    private val peoplesAroundServiceImpl: PeoplesAroundService = PeoplesAroundServiceImpl()
 
     @Test
     fun getPeoplesInRadiusForUser_dotsForOneUserAndUserIsSelfAndRadiusIsZero_oneExistIntersection() {
@@ -30,7 +31,29 @@ internal class PeoplesAroundServiceImplTest {
         val user = arrayOfDots[1][0].userName
         val result = peoplesAroundServiceImpl.getPeoplesInRadiusForUser(
             dots,
-            1.0,
+            0.5,
+            user
+        )
+        assertEquals(result.users.size, 1)
+    }
+    @Test
+    fun getPeoplesInRadiusForUser_dotsForTwoUsersHeHaveIntersectionAndUserIsOneOfTwoAndRadiusIsZero_oneExistIntersection() {
+        val arrayOfDots = readerAndWriter.readFromFileAndReturnDots()
+        val dotsFirst = arrayOfDots[0]
+        val dotsSecond = arrayOfDots[1]
+        val index = 1
+        dotsSecond[index] = LocationEntity(
+            dotsSecond[index].userName,
+            dotsFirst[index].latitude,
+            dotsFirst[index].longitude,
+            dotsSecond[index].accuracy,
+            dotsSecond[index].speed,
+            dotsSecond[index].date)
+        val dots = arrayListOf(dotsFirst, dotsSecond).flatten()
+        val user = dotsFirst[index].userName
+        val result = peoplesAroundServiceImpl.getPeoplesInRadiusForUser(
+            dots,
+            0.0,
             user
         )
         assertEquals(result.users.size, 1)
