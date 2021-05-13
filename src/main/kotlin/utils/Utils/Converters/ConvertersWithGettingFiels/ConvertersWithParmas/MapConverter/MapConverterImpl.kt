@@ -1,13 +1,31 @@
-package Services.PeoplesAroundService.Utils
+package utils.Utils.Converters.ConvertersWithGettingFiels.ConvertersWithParmas.MapConverter
 
 import models.LocationEntity
 
-class MapConverter(val uniqueLongitudes: MutableSet<Double> = mutableSetOf()) {
+class MapConverterImpl: MapConverter{
 
-    val matrixMap = mutableMapOf<Double, MutableMap<Double, ArrayList<LocationEntity>>>()
-    val userMatrix = mutableMapOf<String, ArrayList<LocationEntity>>()
+    private var uniqueLongitudes: MutableSet<Double> = mutableSetOf()
+    private val matrixMap = mutableMapOf<Double, MutableMap<Double, ArrayList<LocationEntity>>>()
+    private val userMatrix = mutableMapOf<String, ArrayList<LocationEntity>>()
 
-    fun convertListOfDotsToMatrixDotsMap(dots: List<LocationEntity>): MutableMap<Double, MutableMap<Double, ArrayList<LocationEntity>>> {
+    override fun getUniqueLongitudes(): MutableSet<Double> {
+        return  uniqueLongitudes
+    }
+
+    override fun setUniqueLongitudes(value: MutableSet<Double>): MutableSet<Double> {
+        this.uniqueLongitudes = value
+        return this.uniqueLongitudes
+    }
+
+    override fun getMatrixMap(): MutableMap<Double, MutableMap<Double, ArrayList<LocationEntity>>> {
+        return matrixMap
+    }
+
+    override fun getUserMatrix(): MutableMap<String, ArrayList<LocationEntity>> {
+        return  userMatrix
+    }
+
+    override fun convert(dots: List<LocationEntity>): MutableMap<Double, MutableMap<Double, ArrayList<LocationEntity>>> {
         val sortedDots = dots.sortedByDescending { it.latitude }
         uniqueLongitudes.clear()
         var result: MutableMap<Double, MutableMap<Double, ArrayList<LocationEntity>>> = mutableMapOf()

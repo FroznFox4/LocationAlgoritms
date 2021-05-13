@@ -1,40 +1,42 @@
 package Services.PeoplesAroundService
 
 import Services.PeoplesAroundService.Models.IntersectionsPeoples
-import Services.PeoplesAroundService.Utils.ListConverter
-import Services.PeoplesAroundService.Utils.MapConverter
+import utils.Utils.Converters.ConvertersWithGettingFiels.ConvertersWithParmas.ListConverters.CustomListConverters.ListConverterImpl
+import utils.Utils.Converters.ConvertersWithGettingFiels.ConvertersWithParmas.MapConverter.MapConverterImpl
 import models.IntPoint
 import models.LocationEntity
+import utils.Utils.Converters.ConvertersWithGettingFiels.ConvertersWithParmas.ListConverters.CustomListConverters.ListConverter
+import utils.Utils.Converters.ConvertersWithGettingFiels.ConvertersWithParmas.MapConverter.MapConverter
 
 class PeoplesAroundServiceImpl : PeoplesAroundService {
 
     private val simpleEntity = arrayListOf<LocationEntity>()
-    private val listConverter = ListConverter()
-    private val mapConverter = MapConverter()
+    private val listConverter: ListConverter = ListConverterImpl()
+    private val mapConverter: MapConverter = MapConverterImpl()
 
     private val uniqueLongitudes: MutableSet<Double>
         get() {
             var result = mutableSetOf<Double>()
-            if (mapConverter.uniqueLongitudes.isNotEmpty())
-                result = mapConverter.uniqueLongitudes
-            else if (listConverter.uniqueLongitudes.isNotEmpty())
-                result = listConverter.uniqueLongitudes
+            if (mapConverter.getUniqueLongitudes().isNotEmpty())
+                result = mapConverter.getUniqueLongitudes()
+            else if (listConverter.getUniqueLongitudes().isNotEmpty())
+                result = listConverter.getUniqueLongitudes()
             return result
         }
 
     private val userMatrix: MutableMap<String, ArrayList<LocationEntity>>
         get() {
             var result = mutableMapOf<String, ArrayList<LocationEntity>>()
-            if (mapConverter.userMatrix.isNotEmpty())
-                result = mapConverter.userMatrix
-            else if (listConverter.userMatrix.isNotEmpty())
-                result = listConverter.userMatrix
+            if (mapConverter.getUserMatrix().isNotEmpty())
+                result = mapConverter.getUserMatrix()
+            else if (listConverter.getUserMatrix().isNotEmpty())
+                result = listConverter.getUserMatrix()
             return result
         }
 
-    private val matrixWithoutZeros = listConverter.matrixWithoutZeros
-    private val matrixWithZeros = listConverter.matrixWithZeros
-    private val matrixMap = mapConverter.matrixMap
+    private val matrixWithoutZeros = listConverter.getMatrix()
+    private val matrixWithZeros = listConverter.getRectangleMatrix()
+    private val matrixMap = mapConverter.getMatrixMap()
 
     constructor()
 
@@ -75,7 +77,7 @@ class PeoplesAroundServiceImpl : PeoplesAroundService {
         val result = IntersectionsPeoples(user)
         val usersMap = mutableMapOf<String, Boolean>()
         if (userMatrix.isEmpty())
-            mapConverter.convertListOfDotsToMatrixDotsMap(dots)
+            mapConverter.convert(dots)
         val localUserMatrix = userMatrix
         localUserMatrix[user]?.forEach {
             val dotInCord = matrixMap[it.latitude]!![it.longitude]!!
@@ -147,11 +149,11 @@ class PeoplesAroundServiceImpl : PeoplesAroundService {
 
     private fun strategy(version: List<Int>) {
         val f1: () -> List<List<LocationEntity>> =
-            { listConverter.convertListOfDotsToMatrixDots(simpleEntity) }
+            { listConverter.convert(simpleEntity) }
         val f2: () -> List<List<LocationEntity>> =
-            { listConverter.addZerosInToMatrix(matrixWithZeros) }
+            { listConverter.convertToRectangle(matrixWithZeros) }
         val f3: () -> MutableMap<Double, MutableMap<Double, ArrayList<LocationEntity>>> =
-            { mapConverter.convertListOfDotsToMatrixDotsMap(simpleEntity) }
+            { mapConverter.convert(simpleEntity) }
         version.forEach {
             when (it) {
                 1 -> f1()

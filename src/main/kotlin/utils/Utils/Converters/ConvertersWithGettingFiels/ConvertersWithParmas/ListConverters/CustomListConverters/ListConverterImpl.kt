@@ -1,14 +1,44 @@
-package Services.PeoplesAroundService.Utils
+package utils.Utils.Converters.ConvertersWithGettingFiels.ConvertersWithParmas.ListConverters.CustomListConverters
 
 import models.LocationEntity
 
-class ListConverter(val uniqueLongitudes: MutableSet<Double> = mutableSetOf<Double>()) {
+class ListConverterImpl:
+    utils.Utils.Converters.ConvertersWithGettingFiels.ConvertersWithParmas.ListConverters.CustomListConverters.ListConverter {
+
+    private var uniqueLongitudes: MutableSet<Double> = mutableSetOf()
+    private val userMatrix = mutableMapOf<String, ArrayList<LocationEntity>>()
     val matrixWithoutZeros = mutableListOf<List<LocationEntity>>()
     val matrixWithZeros = mutableListOf<List<LocationEntity>>()
-    val userMatrix = mutableMapOf<String, ArrayList<LocationEntity>>()
+
+    override fun getMatrix(): MutableList<List<LocationEntity>> {
+        return matrixWithoutZeros
+    }
+
+    override fun getRectangleMatrix(): MutableList<List<LocationEntity>> {
+        return matrixWithZeros
+    }
+
+    override fun getUniqueLongitudes(): MutableSet<Double> {
+        return uniqueLongitudes
+    }
+
+    override fun setUniqueLongitudes(value: MutableSet<Double>): MutableSet<Double> {
+        this.uniqueLongitudes = value
+        return value
+    }
+
+    override fun getUserMatrix(): MutableMap<String, ArrayList<LocationEntity>> {
+        return userMatrix
+    }
 
     //In this may be error
-    fun addZerosInToMatrix(dots: List<List<LocationEntity>>): List<List<LocationEntity>> {
+    override fun convertToRectangle(): List<List<LocationEntity>> {
+        convertToRectangle(matrixWithoutZeros)
+        return matrixWithoutZeros
+    }
+
+    override fun convertToRectangle(dots: List<List<LocationEntity>>): List<List<LocationEntity>> {
+        if (matrixWithoutZeros.isEmpty()) convert(dots.flatten())
         val result = dots.map { arrayOfLocations ->
             if (arrayOfLocations.size != uniqueLongitudes.size) {
                 uniqueLongitudes.forEach { longitude ->
@@ -31,17 +61,17 @@ class ListConverter(val uniqueLongitudes: MutableSet<Double> = mutableSetOf<Doub
     }
 
     //    o(n^2 + 2n)
-    fun convertListOfDotsToMatrixDots(dots: List<LocationEntity>): List<List<LocationEntity>> {
+    override fun convert(dots: List<LocationEntity>): List<List<LocationEntity>> {
         val sortedDots = dots.sortedByDescending { it.latitude }
         uniqueLongitudes.clear()
         val result: ArrayList<ArrayList<LocationEntity>> = ArrayList()
-        convert(sortedDots, result)
+        convertInConvert(sortedDots, result)
         matrixWithoutZeros.clear()
         matrixWithoutZeros.addAll(result)
         return result
     }
 
-    private fun convert(
+    private fun convertInConvert(
         sortedDots: List<LocationEntity>,
         result: ArrayList<ArrayList<LocationEntity>>
     ) {
@@ -76,4 +106,5 @@ class ListConverter(val uniqueLongitudes: MutableSet<Double> = mutableSetOf<Doub
             dotsInOnLatitude.add(el)
         }
     }
+
 }

@@ -1,6 +1,5 @@
 package Services.PeoplesAroundService
 
-import Services.PeoplesAroundService.Utils.MapConverter
 import models.LocationEntity
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
