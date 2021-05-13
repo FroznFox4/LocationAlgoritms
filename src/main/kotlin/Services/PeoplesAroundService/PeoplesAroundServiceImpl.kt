@@ -80,63 +80,60 @@ class PeoplesAroundServiceImpl : PeoplesAroundService {
         localUserMatrix[user]?.forEach {
             val dotInCord = matrixMap[it.latitude]!![it.longitude]!!
             dotInCord.forEach { simpleDotInCord ->
-                if (simpleDotInCord.userName != user)
-                    usersMap.getOrPut(simpleDotInCord.userName) { true }
-                else {
-                    if (radius > 0.0) {
-                        val colKeys = ArrayList(matrixMap.keys)
-                        val rowKeys = ArrayList(uniqueLongitudes)
-                        val curIndexColEl = colKeys.indexOf(it.latitude)
-                        val curIndexRowEl = rowKeys.indexOf(it.longitude)
-                        val colPeriodX = IntPoint(0, 0)
-                        val rowPeriodY = IntPoint(0, 0)
-                        var index = 0
-                        while (true) {
-                            val firstPredicate = (curIndexColEl - index) > -1
-                                    && colKeys[curIndexColEl] - colKeys[curIndexColEl - index] < radius
-                            if (firstPredicate) {
-                                colPeriodX.X = curIndexColEl - index
-                            }
-                            val secondPredicate = (curIndexColEl + index) < colKeys.size
-                                    && colKeys[curIndexColEl + index] - colKeys[curIndexColEl] < radius
-                            if (secondPredicate) {
-                                colPeriodX.Y = curIndexColEl + index
-                            }
-                            if (!firstPredicate && !secondPredicate) {
-                                index = 0
-                                break
-                            }
-                            index += 1
+                usersMap.getOrPut(simpleDotInCord.userName) { true }
+                if (radius > 0.0) {
+                    val colKeys = ArrayList(matrixMap.keys)
+                    val rowKeys = ArrayList(uniqueLongitudes)
+                    val curIndexColEl = colKeys.indexOf(it.latitude)
+                    val curIndexRowEl = rowKeys.indexOf(it.longitude)
+                    val colPeriodX = IntPoint(0, 0)
+                    val rowPeriodY = IntPoint(0, 0)
+                    var index = 0
+                    while (true) {
+                        val firstPredicate = (curIndexColEl - index) > -1
+                                && colKeys[curIndexColEl] - colKeys[curIndexColEl - index] < radius
+                        if (firstPredicate) {
+                            colPeriodX.X = curIndexColEl - index
                         }
-                        while (true) {
-                            val firstPredicate = (curIndexRowEl - index) > -1
-                                    && rowKeys[curIndexRowEl] - rowKeys[curIndexRowEl - index] < radius
-                            if (firstPredicate) {
-                                rowPeriodY.X = curIndexRowEl - index
-                            }
-                            val secondPredicate = (curIndexRowEl + index) < colKeys.size
-                                    && colKeys[curIndexRowEl + index] - colKeys[curIndexRowEl] < radius
-                            if (secondPredicate) {
-                                rowPeriodY.Y = curIndexRowEl + index
-                            }
-                            if (!firstPredicate && !secondPredicate) {
-                                index = 0
-                                break
-                            }
-                            index += 1
+                        val secondPredicate = (curIndexColEl + index) < colKeys.size
+                                && colKeys[curIndexColEl + index] - colKeys[curIndexColEl] < radius
+                        if (secondPredicate) {
+                            colPeriodX.Y = curIndexColEl + index
                         }
-                        val colArray = arrayListOf<Double>()
-                        val rowArray = arrayListOf<Double>()
-                        for (el in colPeriodX.X until colPeriodX.Y)
-                            colArray.add(colKeys[el])
-                        for (el in rowPeriodY.X until rowPeriodY.Y)
-                            rowArray.add(rowKeys[el])
-                        colArray.forEach { col ->
-                            rowArray.forEach { row ->
-                                val rows = matrixMap[col]!!
-                                rows[row]?.forEach { dotInCell ->
-                                    usersMap.getOrPut(dotInCell.userName) { true }
-                                }
+                        if (!firstPredicate && !secondPredicate) {
+                            index = 0
+                            break
+                        }
+                        index += 1
+                    }
+                    while (true) {
+                        val firstPredicate = (curIndexRowEl - index) > -1
+                                && rowKeys[curIndexRowEl] - rowKeys[curIndexRowEl - index] < radius
+                        if (firstPredicate) {
+                            rowPeriodY.X = curIndexRowEl - index
+                        }
+                        val secondPredicate = (curIndexRowEl + index) < colKeys.size
+                                && colKeys[curIndexRowEl + index] - colKeys[curIndexRowEl] < radius
+                        if (secondPredicate) {
+                            rowPeriodY.Y = curIndexRowEl + index
+                        }
+                        if (!firstPredicate && !secondPredicate) {
+                            index = 0
+                            break
+                        }
+                        index += 1
+                    }
+                    val colArray = arrayListOf<Double>()
+                    val rowArray = arrayListOf<Double>()
+                    for (el in colPeriodX.X until colPeriodX.Y)
+                        colArray.add(colKeys[el])
+                    for (el in rowPeriodY.X until rowPeriodY.Y)
+                        rowArray.add(rowKeys[el])
+                    colArray.forEach { col ->
+                        rowArray.forEach { row ->
+                            val rows = matrixMap[col]!!
+                            rows[row]?.forEach { dotInCell ->
+                                usersMap.getOrPut(dotInCell.userName ) { true }
                             }
                         }
                     }
