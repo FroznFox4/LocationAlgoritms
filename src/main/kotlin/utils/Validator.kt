@@ -53,6 +53,7 @@ class Validator {
             else
                 result.add(
                     LocationEntity(
+                        "",
                         (prevEl.latitude + nextEl.latitude) / 2,
                         (prevEl.longitude + nextEl.longitude) / 2,
                         0.0f,
@@ -119,7 +120,7 @@ class Validator {
             zp1 = xp1
             xe1 = g1*(el.longitude - zp1) + xp1
 
-            LocationEntity(xe1, xe, 0.0f, 0.0, el.date)
+            LocationEntity(el.userName, xe1, xe, 0.0f, 0.0, el.date)
         }
 
         return ArrayList(dots.map {

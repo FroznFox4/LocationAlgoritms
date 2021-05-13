@@ -36,6 +36,8 @@ class PeoplesAroundServiceImpl : PeoplesAroundService {
     private val matrixWithZeros = listConverter.matrixWithZeros
     private val matrixMap = mapConverter.matrixMap
 
+    constructor()
+
     /**
      *  @param strategy {
      *      1 - create list with dots without zeros
@@ -54,27 +56,31 @@ class PeoplesAroundServiceImpl : PeoplesAroundService {
     }
 
     override fun getPeoplesInRadius(dots: List<LocationEntity>, radius: Double): List<IntersectionsPeoples> {
-//        val matrix = listConverter.convertListOfDotsToMatrixDots(dots)
-        return getPeoplesInRadiusForUsers(radius, userMatrix.keys.toList())
+        return getPeoplesInRadiusForUsers(dots, radius, userMatrix.keys.toList())
     }
 
     override fun getPeoplesInRadiusForUsers(
+        dots: List<LocationEntity>,
         radius: Double,
         user: List<String>
     ): List<IntersectionsPeoples> {
-        return user.map { getPeoplesInRadiusForUser(radius, it) }
+        return user.map { getPeoplesInRadiusForUser(dots, radius, it) }
     }
 
     override fun getPeoplesInRadiusForUser(
+        dots: List<LocationEntity>,
         radius: Double,
         user: String
     ): IntersectionsPeoples {
         val result = IntersectionsPeoples(user)
-        val usersMap = mutableMapOf<String, Int>()
-        userMatrix[user]?.forEach {
+        val usersMap = mutableMapOf<String, Boolean>()
+        if (userMatrix.isEmpty())
+            mapConverter.convertListOfDotsToMatrixDotsMap(dots)
+        val localUserMatrix = userMatrix
+        localUserMatrix[user]?.forEach {
             val dotInCord = matrixMap[it.latitude]!![it.longitude]!!
             dotInCord.forEach { simpleDotInCord ->
-                usersMap.getOrDefault(simpleDotInCord.userName, 0)
+                usersMap.getOrPut(simpleDotInCord.userName) { true }
                 if (radius > 0.0) {
                     val colKeys = ArrayList(matrixMap.keys)
                     val rowKeys = ArrayList(uniqueLongitudes)
@@ -82,7 +88,7 @@ class PeoplesAroundServiceImpl : PeoplesAroundService {
                     val curIndexRowEl = rowKeys.indexOf(it.longitude)
                     val colPeriodX = IntPoint(0, 0)
                     val rowPeriodY = IntPoint(0, 0)
-                    val index = 0
+                    var index = 0
                     while (true) {
                         val firstPredicate = (curIndexColEl - index) > -1
                                 && colKeys[curIndexColEl] - colKeys[curIndexColEl - index] < radius
@@ -95,8 +101,10 @@ class PeoplesAroundServiceImpl : PeoplesAroundService {
                             colPeriodX.Y = curIndexColEl + index
                         }
                         if (!firstPredicate && !secondPredicate) {
+                            index = 0
                             break
                         }
+                        index += 1
                     }
                     while (true) {
                         val firstPredicate = (curIndexRowEl - index) > -1
@@ -104,31 +112,34 @@ class PeoplesAroundServiceImpl : PeoplesAroundService {
                         if (firstPredicate) {
                             rowPeriodY.X = curIndexRowEl - index
                         }
-                        val secondPredicate = (curIndexRowEl + index) < rowKeys.size
-                                && rowKeys[curIndexRowEl + index] - colKeys[curIndexRowEl] < radius
+                        val secondPredicate = (curIndexRowEl + index) < colKeys.size
+                                && colKeys[curIndexRowEl + index] - colKeys[curIndexRowEl] < radius
                         if (secondPredicate) {
                             rowPeriodY.Y = curIndexRowEl + index
                         }
                         if (!firstPredicate && !secondPredicate) {
+                            index = 0
                             break
                         }
+                        index += 1
                     }
                     val colArray = arrayListOf<Double>()
                     val rowArray = arrayListOf<Double>()
-                    for (el in colPeriodX.X..colPeriodX.Y)
+                    for (el in colPeriodX.X until colPeriodX.Y)
                         colArray.add(colKeys[el])
-                    for (el in rowPeriodY.X..rowPeriodY.Y)
+                    for (el in rowPeriodY.X until rowPeriodY.Y)
                         rowArray.add(rowKeys[el])
                     colArray.forEach { col ->
                         rowArray.forEach { row ->
-                            matrixMap[col]!![row]!!.forEach { dotInCell ->
-                                usersMap.getOrDefault(dotInCell.userName, 0)
+                            val rows = matrixMap[col]!!
+                            rows[row]?.forEach { dotInCell ->
+                                usersMap.getOrPut(dotInCell.userName ) { true }
                             }
                         }
                     }
                 }
             }
-        }
+        } ?: return IntersectionsPeoples("user not found")
         result.users.addAll(usersMap.keys)
         return result
     }
