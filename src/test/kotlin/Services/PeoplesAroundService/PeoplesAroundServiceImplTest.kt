@@ -37,7 +37,7 @@ internal class PeoplesAroundServiceImplTest {
         assertEquals(result.users.size, 1)
     }
     @Test
-    fun getPeoplesInRadiusForUser_dotsForTwoUsersHeHaveIntersectionAndUserIsOneOfTwoAndRadiusIsZero_oneExistIntersection() {
+    fun getPeoplesInRadiusForUser_DotsForTwoUsersHeHaveIntersectionAndUserIsOneOfTwoAndRadiusIsZero_TwoExistIntersectionItsSelfAndOneAnother() {
         val arrayOfDots = readerAndWriter.readFromFileAndReturnDots()
         val dotsFirst = arrayOfDots[0]
         val dotsSecond = arrayOfDots[1]
@@ -56,6 +56,29 @@ internal class PeoplesAroundServiceImplTest {
             0.0,
             user
         )
-        assertEquals(result.users.size, 1)
+        assertEquals(result.users.size, 2)
+    }
+
+    @Test
+    fun getPeoplesInRadiusForUser_DotsForTwoUsersHeHaveIntersectionAndUserIsOneOfTwoAndRadiusIsZero_ALotOfExistIntersectionItsAllAnother() {
+        val arrayOfDots = readerAndWriter.readFromFileAndReturnDots()
+        val dotsFirst = arrayOfDots[0]
+        val dotsSecond = arrayOfDots[1]
+        val index = 1
+        dotsSecond[index] = LocationEntity(
+            dotsSecond[index].userName,
+            dotsFirst[index].latitude,
+            dotsFirst[index].longitude,
+            dotsSecond[index].accuracy,
+            dotsSecond[index].speed,
+            dotsSecond[index].date)
+        val dots = arrayListOf(dotsFirst, dotsSecond).flatten()
+        val user = dotsSecond[index].userName
+        val result = peoplesAroundServiceImpl.getPeoplesInRadiusForUser(
+            dots,
+            1.0,
+            user
+        )
+        assertEquals(result.users.size, 2)
     }
 }
