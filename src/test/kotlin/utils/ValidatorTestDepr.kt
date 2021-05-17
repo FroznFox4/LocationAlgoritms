@@ -4,11 +4,12 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import models.LocationEntity
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 import java.io.File
 import java.util.*
 
+@Disabled
 @Deprecated("All move to Reader And Writer")
 internal class ValidatorTestDepr{
 

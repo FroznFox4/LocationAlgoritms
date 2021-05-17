@@ -3,12 +3,12 @@ package utils.Utils.Converters.ConvertersWithGettingFiels.ConvertersWithParmas.L
 import models.LocationEntity
 
 class ListConverterImpl:
-    utils.Utils.Converters.ConvertersWithGettingFiels.ConvertersWithParmas.ListConverters.CustomListConverters.ListConverter {
+    utils.Utils.Converters.ConvertersWithGettingFiels.ConvertersWithParmas.ListConverters.CustomListConverters.ListConverterFill {
 
     private var uniqueLongitudes: MutableSet<Double> = mutableSetOf()
     private val userMatrix = mutableMapOf<String, ArrayList<LocationEntity>>()
-    val matrixWithoutZeros = mutableListOf<List<LocationEntity>>()
-    val matrixWithZeros = mutableListOf<List<LocationEntity>>()
+    private val matrixWithoutZeros = mutableListOf<List<LocationEntity>>()
+    private val matrixWithZeros = mutableListOf<List<LocationEntity>>()
 
     override fun getMatrix(): MutableList<List<LocationEntity>> {
         return matrixWithoutZeros

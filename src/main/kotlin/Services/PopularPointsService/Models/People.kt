@@ -1,4 +1,4 @@
-package Services.PeoplesAroundService.Models
+package Services.PopularPointsService.Models
 
 import models.LocationEntity
 
