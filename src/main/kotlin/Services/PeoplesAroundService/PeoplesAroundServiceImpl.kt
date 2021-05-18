@@ -5,13 +5,13 @@ import utils.Utils.Converters.ConvertersWithGettingFiels.ConvertersWithParmas.Li
 import utils.Utils.Converters.ConvertersWithGettingFiels.ConvertersWithParmas.MapConverter.MapConverterImpl
 import models.IntPoint
 import models.LocationEntity
-import utils.Utils.Converters.ConvertersWithGettingFiels.ConvertersWithParmas.ListConverters.CustomListConverters.ListConverterFill
+import utils.Utils.Converters.ConvertersWithGettingFiels.ConvertersWithParmas.ListConverters.CustomListConverters.ListConverter
 import utils.Utils.Converters.ConvertersWithGettingFiels.ConvertersWithParmas.MapConverter.MapConverter
 
 class PeoplesAroundServiceImpl : PeoplesAroundService {
 
     private val simpleEntity = arrayListOf<LocationEntity>()
-    private val listConverter: ListConverterFill = ListConverterImpl()
+    private val listConverter: ListConverter = ListConverterImpl()
     private val mapConverter: MapConverter = MapConverterImpl()
 
     private val uniqueLongitudes: MutableSet<Double>
@@ -151,7 +151,7 @@ class PeoplesAroundServiceImpl : PeoplesAroundService {
         val f1: () -> List<List<LocationEntity>> =
             { listConverter.convert(simpleEntity) }
         val f2: () -> List<List<LocationEntity>> =
-            { listConverter.convertToRectangle(matrixWithZeros) }
+            { listConverter.convertToRectangleFromMatrix(matrixWithZeros) }
         val f3: () -> MutableMap<Double, MutableMap<Double, ArrayList<LocationEntity>>> =
             { mapConverter.convert(simpleEntity) }
         version.forEach {

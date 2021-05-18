@@ -8,4 +8,5 @@ interface PopularPointsServiceGen<T, O>: Services {
     fun getPopularPointsForUser(user: String, dots: T): O
     fun getPopularPointsForUsers(dots: Map<String, T>): Map<String, O>
     fun getPopularPointsForUserForPeople(user: O): O
+    fun getPopularPointsInRadius(user: O, radius: Int): List<T>
 }

@@ -2,8 +2,7 @@ package utils.Utils.Converters.ConvertersWithGettingFiels.ConvertersWithParmas.L
 
 import models.LocationEntity
 
-class ListConverterImpl:
-    utils.Utils.Converters.ConvertersWithGettingFiels.ConvertersWithParmas.ListConverters.CustomListConverters.ListConverterFill {
+class ListConverterImpl: ListConverter {
 
     private var uniqueLongitudes: MutableSet<Double> = mutableSetOf()
     private val userMatrix = mutableMapOf<String, ArrayList<LocationEntity>>()
@@ -32,12 +31,12 @@ class ListConverterImpl:
     }
 
     //In this may be error
-    override fun convertToRectangle(): List<List<LocationEntity>> {
-        convertToRectangle(matrixWithoutZeros)
+    override fun convertToRectangleFromLocalMatrix(): List<List<LocationEntity>> {
+        convertToRectangleFromMatrix(matrixWithoutZeros)
         return matrixWithoutZeros
     }
 
-    override fun convertToRectangle(dots: List<List<LocationEntity>>): List<List<LocationEntity>> {
+    override fun convertToRectangleFromMatrix(dots: List<List<LocationEntity>>): List<List<LocationEntity>> {
         if (matrixWithoutZeros.isEmpty()) convert(dots.flatten())
         val result = dots.map { arrayOfLocations ->
             if (arrayOfLocations.size != uniqueLongitudes.size) {
@@ -64,7 +63,7 @@ class ListConverterImpl:
     override fun convert(dots: List<LocationEntity>): List<List<LocationEntity>> {
         val sortedDots = dots.sortedByDescending { it.latitude }
         uniqueLongitudes.clear()
-        val result: ArrayList<ArrayList<LocationEntity>> = ArrayList()
+        val result = arrayListOf<ArrayList<LocationEntity>>()
         convertInConvert(sortedDots, result)
         matrixWithoutZeros.clear()
         matrixWithoutZeros.addAll(result)
@@ -75,10 +74,12 @@ class ListConverterImpl:
         sortedDots: List<LocationEntity>,
         result: ArrayList<ArrayList<LocationEntity>>
     ) {
-        val firstObject = sortedDots.first()
-        val dotsInOnLatitude: ArrayList<LocationEntity> = arrayListOf(firstObject)
-        sortedDots.forEach { el ->
-            inBraceConverter(dotsInOnLatitude, el, result)
+        if (sortedDots.isNotEmpty()) {
+            val firstObject = sortedDots.first()
+            val dotsInOnLatitude: ArrayList<LocationEntity> = arrayListOf(firstObject)
+            sortedDots.forEach { el ->
+                inBraceConverter(dotsInOnLatitude, el, result)
+            }
         }
     }
 
@@ -92,11 +93,12 @@ class ListConverterImpl:
         //Add unique longitudes
         if (!uniqueLongitudes.contains(el.longitude)) uniqueLongitudes.add(el.longitude)
 
-        userMatrix.getOrDefault(el.userName, arrayListOf(el))
+        userMatrix.getOrPut(el.userName) { arrayListOf(el) }
         val predicate = userMatrix[el.userName]!!.find { it == el } == null
         if (predicate) userMatrix[el.userName]!!.add(el)
 
-        if (lastEl.latitude == el.latitude) dotsInOnLatitude.add(el)
+        if (lastEl.latitude == el.latitude)
+            dotsInOnLatitude.add(el)
         else {
             result.add(
                 ArrayList(
@@ -107,4 +109,8 @@ class ListConverterImpl:
         }
     }
 
+    override fun convertToRectangleFromDots(dots: List<LocationEntity>): List<List<LocationEntity>> {
+        convert(dots)
+        return convertToRectangleFromLocalMatrix()
+    }
 }

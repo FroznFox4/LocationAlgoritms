@@ -3,6 +3,6 @@ package Services.PopularPointsService.Models
 import models.LocationEntity
 
 data class People(
-    val userName: String = "",
-    val dots: List<LocationEntity> = emptyList()
+    var userName: String = "",
+    var dots: List<LocationEntity> = emptyList()
 )

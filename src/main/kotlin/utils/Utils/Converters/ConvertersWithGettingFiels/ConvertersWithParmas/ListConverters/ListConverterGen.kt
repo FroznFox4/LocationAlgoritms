@@ -3,9 +3,10 @@ package utils.Utils.Converters.ConvertersWithGettingFiels.ConvertersWithParmas.L
 import models.LocationEntity
 import utils.Utils.Converters.ConvertersWithGettingFiels.ConvertersWithParmas.ConverterWithGettingFieldsWithSomeParams
 
-interface ListConverter<T, R>: ConverterWithGettingFieldsWithSomeParams<List<List<LocationEntity>>> {
+interface ListConverterGen<T, R, D>: ConverterWithGettingFieldsWithSomeParams<List<List<LocationEntity>>> {
     fun getMatrix(): T
     fun getRectangleMatrix(): T
-    fun convertToRectangle(dots: R): R
-    fun convertToRectangle(): R
+    fun convertToRectangleFromMatrix(dots: R): R
+    fun convertToRectangleFromLocalMatrix(): R
+    fun convertToRectangleFromDots(dots: D): R
 }
