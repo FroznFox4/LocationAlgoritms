@@ -15,4 +15,12 @@ internal class ReaderAndWriterTest {
         result
             .map { el -> assertTrue(el.isNotEmpty()) }
     }
+
+    @Test
+    fun writeToConsole() {
+        val result = readerAndWriter.readFromFileAndReturnDots()
+        result.flatten().forEach {
+            println(it.toCords())
+        }
+    }
 }

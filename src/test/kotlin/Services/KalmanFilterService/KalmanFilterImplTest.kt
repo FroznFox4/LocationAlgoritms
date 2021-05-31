@@ -6,17 +6,17 @@ import com.google.gson.reflect.TypeToken
 import models.LocationEntity
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
-import utils.KalmanFilterKt.KalmanFilterKt
+import utils.KalmanFilterKt.KalmanFilterImpl
 import utils.ReaderAndWriter
 import java.util.*
 import java.util.concurrent.ThreadLocalRandom
 import kotlin.collections.ArrayList
 
-internal class KalmanFilterKtImplTest {
+internal class KalmanFilterImplTest {
 
     @Test
     fun initAndTestFilter() {
-        val kalmanFilter = KalmanFilterKt()
+        val kalmanFilter = KalmanFilterImpl()
         val geoJson = "tempData/geoJson.json"
         val text = ReaderAndWriter(geoJson).readFromFile()
         val dots = stringOfDotsToArray(text)
@@ -31,6 +31,14 @@ internal class KalmanFilterKtImplTest {
         println("-----------------")
         val result = kalmanFilter.getCollection()
         writeToConsole(result)
+        val kalmanFilterTwo = KalmanFilterImpl()
+        kalmanFilterTwo.setState(result.first())
+        (1 until mew.size).map {
+            kalmanFilterTwo.process(mew[it])
+        }
+        val result2 = kalmanFilterTwo.getCollection()
+        println("-----------------")
+        writeToConsole(result2)
         assertTrue(result.size > 0)
     }
 

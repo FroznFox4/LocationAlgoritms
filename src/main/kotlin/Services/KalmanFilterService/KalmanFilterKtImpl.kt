@@ -7,7 +7,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.math.pow
 
-class KalmanFilterKtImpl: KalmanFilterKt {
+class KalmanFilterKtImpl : KalmanFilterKt {
 
     private var timeStamp: Long = 0
     private var latitude: Double = 0.0
@@ -28,6 +28,7 @@ class KalmanFilterKtImpl: KalmanFilterKt {
         this.timeStamp = timeStamp
         variance = accuracy * accuracy
     }
+
     override fun setState(data: LocationEntity) {
         this.latitude = data.latitude
         this.longitude = data.longitude
@@ -43,7 +44,13 @@ class KalmanFilterKtImpl: KalmanFilterKt {
      * accuracy - measurement of 1 standard deviation error in meters
      * newTimeStamp - time of measurement in millis
      */
-    private fun process(newSpeed: Float, newLatitude: Double, newLongitude: Double, newTimeStamp: Long, newAccuracy: Float) {
+    private fun process(
+        newSpeed: Float,
+        newLatitude: Double,
+        newLongitude: Double,
+        newTimeStamp: Long,
+        newAccuracy: Float
+    ) {
         // Uncomment this, if you are receiving accuracy from your gps
         var localAccuracy = newAccuracy
         if (localAccuracy < ConstantsKt().MIN_ACCURACY) {
@@ -76,6 +83,7 @@ class KalmanFilterKtImpl: KalmanFilterKt {
             exportNewPoint(localSpeed, longitude, latitude, duration)
         }
     }
+
     override fun process(locationEntity: LocationEntity) {
         with(locationEntity) {
             process(

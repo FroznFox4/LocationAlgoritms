@@ -7,7 +7,6 @@ import models.LocationEntity
 import org.junit.jupiter.api.Test
 import utils.ReaderAndWriter
 
-import java.io.File
 import java.util.*
 import java.util.concurrent.ThreadLocalRandom
 import kotlin.collections.ArrayList
@@ -16,7 +15,7 @@ internal class KalmanFilterTest {
 
     @Test
     fun initAndTestFilter() {
-        val kalmanFilter = KalmanFilterKt()
+        val kalmanFilter = KalmanFilterImpl()
         val geoJson = "tempData/geoJson.json"
         val text = ReaderAndWriter(geoJson).readFromFile()
         val dots = stringOfDotsToArray(text)

@@ -4,7 +4,7 @@ import models.LocationEntity
 
 class MapConverterImpl: MapConverter{
 
-    private var uniqueLongitudes: MutableSet<Double> = mutableSetOf()
+    private var uniqueLongitudes = mutableSetOf<Double>()
     private val matrixMap = mutableMapOf<Double, MutableMap<Double, ArrayList<LocationEntity>>>()
     private val userMatrix = mutableMapOf<String, ArrayList<LocationEntity>>()
 
@@ -25,7 +25,7 @@ class MapConverterImpl: MapConverter{
         return  userMatrix
     }
 
-    override fun convert(dots: List<LocationEntity>): MutableMap<Double, MutableMap<Double, ArrayList<LocationEntity>>> {
+    override fun convert(dots: ArrayList<LocationEntity>): MutableMap<Double, MutableMap<Double, ArrayList<LocationEntity>>> {
         val sortedDots = dots.sortedByDescending { it.latitude }
         uniqueLongitudes.clear()
         var result: MutableMap<Double, MutableMap<Double, ArrayList<LocationEntity>>> = mutableMapOf()

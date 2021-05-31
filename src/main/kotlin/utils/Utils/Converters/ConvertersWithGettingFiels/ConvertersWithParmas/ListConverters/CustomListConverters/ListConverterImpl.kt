@@ -4,7 +4,7 @@ import models.LocationEntity
 
 class ListConverterImpl: ListConverter {
 
-    private var uniqueLongitudes: MutableSet<Double> = mutableSetOf()
+    private var uniqueLongitudes = mutableSetOf<Double>()
     private val userMatrix = mutableMapOf<String, ArrayList<LocationEntity>>()
     private val matrixWithoutZeros = mutableListOf<List<LocationEntity>>()
     private val matrixWithZeros = mutableListOf<List<LocationEntity>>()
@@ -26,8 +26,8 @@ class ListConverterImpl: ListConverter {
         return value
     }
 
-    override fun getUserMatrix(): MutableMap<String, ArrayList<LocationEntity>> {
-        return userMatrix
+    override fun getUserMatrix(): MutableMap<String, List<LocationEntity>> {
+        return userMatrix as MutableMap<String, List<LocationEntity>>
     }
 
     //In this may be error

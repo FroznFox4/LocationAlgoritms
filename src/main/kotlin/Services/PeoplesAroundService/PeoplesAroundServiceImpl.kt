@@ -30,7 +30,7 @@ class PeoplesAroundServiceImpl : PeoplesAroundService {
             if (mapConverter.getUserMatrix().isNotEmpty())
                 result = mapConverter.getUserMatrix()
             else if (listConverter.getUserMatrix().isNotEmpty())
-                result = listConverter.getUserMatrix()
+                result = listConverter.getUserMatrix() as MutableMap<String, ArrayList<LocationEntity>>
             return result
         }
 
@@ -77,7 +77,7 @@ class PeoplesAroundServiceImpl : PeoplesAroundService {
         val result = IntersectionsPeoples(user)
         val usersMap = mutableMapOf<String, Boolean>()
         if (userMatrix.isEmpty())
-            mapConverter.convert(dots)
+            mapConverter.convert(ArrayList(dots))
         val localUserMatrix = userMatrix
         localUserMatrix[user]?.forEach {
             val dotInCord = matrixMap[it.latitude]!![it.longitude]!!
